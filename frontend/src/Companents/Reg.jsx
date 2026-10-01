@@ -12,35 +12,41 @@ function Reg() {
   const [tel, setTel] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const dataForm = {
-      fio,
-      login,
-      email,
-      tel,
-      password
+      login, password, fio, tel, email
     };
     try {
-      const response = await fetch("http://localhost:3000/reg", {
+      const response = await fetch("http://localhost:4000/reg", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(dataForm),
 
-      });
-      const navigate = useNavigate();
+      })
+
+      // if (!response.ok) {
+      //   throw new Error(`Response status: ${response.status}`);
+      // }
+
+      const result = await response.json();
+      console.log(result);
+
+
       alert('Пользователь создан!')
       navigate('/login');
-    } catch {
+    } catch (error) {
+    console.error(error.message);
+  }
 
-    }
-  
-};
+  };
 
-  const handleSubmitFIO = (value) => setFio(value);
+  const handleSubmitFio = (value) => setFio(value);
   const handleSubmitLogin = (value) => setLogin(value);
   const handleSubmitEmail = (value) => setEmail(value);
   const handleSubmitPhone = (value) => setTel(value);
@@ -62,7 +68,7 @@ function Reg() {
             // pattern='[А-Яа-яЁё\s]+]'
             value={fio}
             title='Только кириллица и пробелы'
-            onChange={(e) => handleSubmitFIO(e.target.value)}
+            onChange={(e) => handleSubmitFio(e.target.value)}
           />
           <Form.Text className="text-muted">
             ФИО
