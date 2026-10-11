@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PTSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --blue: #007bff;
+  --dark-blue: #0d47a1;
+  --gray: #6c757d;
+  --bg: #f8f9fa;
+  --white: #ffffff;
+  color-scheme: light;
+}
+
+body,
+#root {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--dark-blue);
+}
+
+h1 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+h2 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+h3 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.helper,
+.text-muted,
+small {
+  font-family: "PT Sans", sans-serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+header {
+  background-color: var(--gray);
+  color: var(--white);
+  padding: 12px 20px;
+}
+
+header h1 {
+  color: var(--white);
+  margin: 0;
+  font-size: 36px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  background: var(--dark-blue);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  background: var(--blue);
+  transform: translateY(-2px);
+}
+
+main {
+  background: var(--bg);
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(13, 71, 161, 0.15);
+}
+
+.btn,
+.btn-primary,
+.btn-success,
+.btn-secondary,
+.btn-danger,
+.btn-outline-primary {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+  color: #ffffff !important;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn-success:hover,
+.btn-secondary:hover,
+.btn-danger:hover,
+.btn-outline-primary:hover {
+  background-color: #0d47a1 !important;
+  border-color: #0d47a1 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+footer {
+  background: var(--gray);
+  color: var(--white);
+  text-align: center;
+  padding: 16px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.form-error {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+@media (max-width: 844px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  form {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+
+  .card-group {
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
